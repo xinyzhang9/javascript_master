@@ -20,14 +20,10 @@ public class Solution {
                     dp[i][j] = dp[i-1][j-1]+1;
                 }else{
                     dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
-                }
-                if(dp[i][j] > max){
-                    max = dp[i][j];
-                }
-                
+                }                
             }
         }
-        return max;
+        return dp[A.length()][B.length()];
     }
    
     
