@@ -18,24 +18,28 @@ public class Queue {
     
     public void push(int element) {
         // write your code here
-        while(stack2.size()>0){
-            stack1.push(stack2.pop());
-        }
+
         stack1.push(element);
     }
 
     public int pop() {
         // write your code here
-        while(stack1.size()>0){
-            stack2.push(stack1.pop());
+        if(stack2.empty()){
+            while (! stack1.empty()) {
+    			stack2.push(stack1.pop());
+    			
+    		}
         }
+        
         return stack2.pop();
     }
 
     public int top() {
         // write your code here
-        while(stack1.size()>0){
-            stack2.push(stack1.pop());
+        if(stack2.empty()){
+            while (! stack1.empty()) {
+    			stack2.push(stack1.pop());
+    		}
         }
         return stack2.peek();
     }
