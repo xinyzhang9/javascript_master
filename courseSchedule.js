@@ -28,12 +28,13 @@ var canFinish = function(numCourses, prerequisites) {
     return true;
 };
 
-//construct graph
+//construct directed graph
 var constructGraph = function(numCourses, prerequisites){
     var nodes = [];
     for(var i = 0; i < numCourses; i++){
         var node = {};
         node.neighbors = [];
+        node.visited = false;
         nodes[i] = node;
     }
     for(var j = 0; j < prerequisites.length; j++){
