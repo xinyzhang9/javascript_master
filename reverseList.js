@@ -17,3 +17,19 @@ var reverseList = function(head) {
     head.next = null;
     return newhead; //** same newhead as **
 };
+
+//method 2
+var reverseList_no_recursion = function(head) {
+    if(!head)
+        return head;
+    var pre = head;
+    var cur = head.next;
+    while(cur){
+        var tmp = cur.next;
+        cur.next = pre;
+        pre = cur;
+        cur = tmp;
+    }
+    head.next = null;
+    return pre;
+};
