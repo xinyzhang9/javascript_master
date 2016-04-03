@@ -39,6 +39,7 @@ var findmid = function(head){
 var merge = function(l1,l2){
     var index = 0;
     var dummy = new ListNode(-1);
+    var old = dummy;
     while(l1 && l2){
         if(index % 2 === 0){
             dummy.next = l1;
@@ -56,7 +57,7 @@ var merge = function(l1,l2){
     if(l2){
         dummy.next = l2;
     }
-    // return dummy.next;
+    return old.next;
 };
 
 var reverseList = function(head){
