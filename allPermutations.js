@@ -20,13 +20,13 @@ function perm(str,stack,res){
 		
 	}
 	for(var i = 0; i < str.length; i++){
-		// console.log('i:'+i);
+		console.log('i:'+i);
 		var x = str.splice(i,1);
 		// console.log('x:'+x);
 		// console.log('str:'+str);
 		stack.push(x);
 		// console.log('stack:'+stack);
-		// console.log('do perm');
+		console.log('do perm');
 		perm(str,stack,res);
 		stack.pop();
 		// console.log('after pop stack:'+stack);
@@ -40,4 +40,4 @@ function perm(str,stack,res){
 }
 
 //demo
-allPermutations('123');
+allPermutations('abc');
