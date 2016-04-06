@@ -15,26 +15,29 @@ function perm(str,stack,res){
 	if(str.length == 0){
 		stack = stack.join('');
 		res.push(stack.slice());
+		console.log(res);
 		return;
 		
 	}
 	for(var i = 0; i < str.length; i++){
-		console.log('i:'+i);
+		// console.log('i:'+i);
 		var x = str.splice(i,1);
-		console.log('x:'+x);
-		console.log('str:'+str);
+		// console.log('x:'+x);
+		// console.log('str:'+str);
 		stack.push(x);
-		console.log('stack:'+stack);
-		console.log('do perm');
+		// console.log('stack:'+stack);
+		// console.log('do perm');
 		perm(str,stack,res);
 		stack.pop();
-		console.log('after pop stack:'+stack);
-		console.log('i:'+i);
+		// console.log('after pop stack:'+stack);
+		// console.log('i:'+i);
+		//add x back to ith index of str
+		console.log('before splice str:'+str);
 		str.splice(i,0,x);
 		console.log('after splice str:'+str);
-		console.log('-------');
+		// console.log('-------');
 	}
 }
 
 //demo
-allPermutations('abc');
+allPermutations('123');
