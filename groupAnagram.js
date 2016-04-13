@@ -10,7 +10,6 @@
     hash  = ((hash << 5) - hash) + chr;
     hash |= 0; // Convert to 32bit integer
   }
-  console.log(hash);
   return hash;
 };
 var groupAnagrams = function(strs) {
@@ -20,7 +19,6 @@ var groupAnagrams = function(strs) {
     var map = {};
     for(var i = 0; i < strs.length; i++){
         var tmp = strs[i].split('').sort().join('');
-        console.log(tmp);
         if(map[tmp.hashCode()] === undefined){
             map[tmp.hashCode()] = [];
             map[tmp.hashCode()].push(strs[i]);
