@@ -18,6 +18,7 @@ var isHappy = function(n) {
     while(map[n] === undefined){
         map[n] = 1;
         n = getSum(getDigits(n));
+        console.log(n);
     }
     return n === 1;
 };
@@ -38,3 +39,5 @@ var getSum = function(arr){
     }
     return sum;
 }
+
+console.log(isHappy(14));
