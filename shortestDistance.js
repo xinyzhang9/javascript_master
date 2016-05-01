@@ -12,6 +12,7 @@
  * @param {string} word2
  * @return {number}
  */
+ //O(n)
 var shortestDistance = function(words, word1, word2) {
     var idx1 = -1;
     var idx2 = -1;
